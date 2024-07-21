@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://byg1hvmspp08g"]
+
+[ext_resource type="PackedScene" uid="uid://bhffdliqc8cxp" path="res://meshes/building1.glb" id="1_klxsp"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9194, 0, 21.7843)
+collision_layer = 3
+
+[node name="building1" parent="StaticBody3D" instance=ExtResource("1_klxsp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.88311, 0, -19.2575)
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.52486, 9.33738, -19.3466)
+depth = 20.0
+polygon = PackedVector2Array(-20.7758, 2.81387, -33.0319, 2.55599, -32.8822, -13.9357, -7.51489, -13.7525, -7.50008, 17.4491, -20.3831, 17.7996)
