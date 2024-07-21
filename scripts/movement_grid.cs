@@ -12,6 +12,8 @@ public partial class movement_grid : Node3D
 	private unit? _focusedUnit;
 	private List<Node3D> _tiles = new();
 
+	public Vector3 Reference { get; set; }
+
 	[Export]
 	public float GridSize = 1;
 
@@ -21,9 +23,7 @@ public partial class movement_grid : Node3D
 	public Vector3 Origin {
 		get
 		{
-			if (_focusedUnit?.Position is Vector3 real)
-				return new Vector3(real.X - (float)_grid.GetLength(0) / 2 * GridSize, real.Y, real.Z - (float)_grid.GetLength(1) / 2 * GridSize);
-			return Position;
+			return new Vector3(Reference.X - (float)_grid.GetLength(0) / 2 * GridSize, Reference.Y, Reference.Z - (float)_grid.GetLength(1) / 2 * GridSize);
 		}
 	}
 	
@@ -37,10 +37,11 @@ public partial class movement_grid : Node3D
 	public void ShowMovementGrid(unit unit)
 	{
 		_focusedUnit = unit;
+		Reference = ToRealCoordinates(ToGridCoordinates(unit.Position));
 
 		InitializeGrid(unit.MovementRange);
 		CheckCollisions();
-		FloodFill(ToGridCoordinates(unit.Position), unit.MovementRange + 1);
+		FloodFill(ToGridCoordinates(unit.Position), unit.MovementRange);
 		VisualizeGrid();
 	}
 
@@ -202,7 +203,7 @@ public partial class movement_grid : Node3D
 				}
 
 				_moveTarget.Visible = true;
-				_moveTarget.GlobalPosition = ToRealCoordinates(target);
+				_moveTarget.Position = ToRealCoordinates(target);
 			}
 			else if (_moveTarget is not null)
 				_moveTarget.Visible = false;
