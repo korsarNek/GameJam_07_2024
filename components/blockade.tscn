@@ -1,15 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://4to83lc18kr5"]
 
-[ext_resource type="PackedScene" uid="uid://bdvqkvpssnym7" path="res://meshes/blockade.glb" id="1_v4v43"]
+[ext_resource type="PackedScene" uid="uid://bdvqkvpssnym7" path="res://meshes/blockade.glb" id="1_a5p6o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a13qg"]
 size = Vector3(1, 1.6, 1.8)
 
 [node name="Blockade" type="StaticBody3D"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.790867, 0.0463472)
 shape = SubResource("BoxShape3D_a13qg")
 
-[node name="blockade" parent="." instance=ExtResource("1_v4v43")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0836853, 0.257435, -0.0576815)
+[node name="blockade" parent="." instance=ExtResource("1_a5p6o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0579603, 0.250609, -0.0696819)

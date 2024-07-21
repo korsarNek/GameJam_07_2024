@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b6sgipwir8lyy"]
 
-[ext_resource type="PackedScene" uid="uid://bmqi4tx2k0epx" path="res://meshes/test.glb" id="1_tbrfv"]
+[ext_resource type="PackedScene" uid="uid://bdwoxm81wwwus" path="res://meshes/vampire.glb" id="1_tjv5d"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vfwd6"]
 radius = 0.4
@@ -12,5 +12,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.246491, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.553608, 0)
 shape = SubResource("CapsuleShape3D_vfwd6")
 
-[node name="test" parent="." instance=ExtResource("1_tbrfv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0998744, 0.0114307, -0.0125664)
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.2
+target_desired_distance = 0.1
+
+[node name="vampire" parent="." instance=ExtResource("1_tjv5d")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.24, 0)

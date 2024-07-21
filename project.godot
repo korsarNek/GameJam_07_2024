@@ -23,6 +23,11 @@ project/assembly_name="Game Jam"
 
 import/fbx/enabled=false
 
+[layer_names]
+
+3d_physics/layer_2="obstacles"
+3d_physics/layer_3="selectable"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
