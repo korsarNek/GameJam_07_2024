@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6sgipwir8lyy"]
+
+[ext_resource type="PackedScene" uid="uid://bmqi4tx2k0epx" path="res://meshes/test.glb" id="1_tbrfv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vfwd6"]
+radius = 0.4
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.246491, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.553608, 0)
+shape = SubResource("CapsuleShape3D_vfwd6")
+
+[node name="test" parent="." instance=ExtResource("1_tbrfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0998744, 0.0114307, -0.0125664)

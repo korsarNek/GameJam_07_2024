@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg5lm5tdcbvc1"]
+
+[ext_resource type="Script" path="res://scripts/level.cs" id="1_00kbi"]
+[ext_resource type="PackedScene" uid="uid://4to83lc18kr5" path="res://components/blockade.tscn" id="2_tq6jc"]
+[ext_resource type="PackedScene" uid="uid://b6sgipwir8lyy" path="res://components/player.tscn" id="3_28ojr"]
+[ext_resource type="Script" path="res://scripts/unit.cs" id="4_rjni1"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_00kbi")
+GridSize = 1.0
+
+[node name="Blockade" parent="." instance=ExtResource("2_tq6jc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.40428, 0, -1.2779)
+
+[node name="Blockade" parent="Blockade" instance=ExtResource("2_tq6jc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010501, 0, -2.00082)
+
+[node name="Blockade" parent="Blockade/Blockade" instance=ExtResource("2_tq6jc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0400878, -9.53674e-07, -2.08384)
+
+[node name="Player" parent="." groups=["units"] instance=ExtResource("3_28ojr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4779, 0.276457, 0)
+script = ExtResource("4_rjni1")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 4, 3, 4)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.157792, -0.942618, 0.294232, 0.445493, 0.333873, 0.830702, -0.88127, 0, 0.472612, 5.45065, 6.26307, 0)
