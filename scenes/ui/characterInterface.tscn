@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dph3h86owmqgj"]
+
+[node name="Ui" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="AbilityContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 777.0
+offset_top = 502.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Abilities" type="ItemList" parent="Control/AbilityContainer"]
+layout_mode = 2
+
+[node name="Ability 1" type="Button" parent="Control/AbilityContainer/Abilities"]
+layout_mode = 2
+offset_left = -2.0
+offset_right = 69.0
+offset_bottom = 31.0
+size_flags_vertical = 8
+text = "Ability 1"
+
+[node name="Ability 2" type="Button" parent="Control/AbilityContainer/Abilities"]
+layout_mode = 2
+offset_left = 85.0
+offset_right = 156.0
+offset_bottom = 31.0
+size_flags_vertical = 8
+text = "Ability 2"
+
+[node name="Ability 3" type="Button" parent="Control/AbilityContainer/Abilities"]
+layout_mode = 2
+offset_left = 171.0
+offset_right = 242.0
+offset_bottom = 31.0
+size_flags_vertical = 8
+text = "Ability 3"
+
+[node name="Ability 4" type="Button" parent="Control/AbilityContainer/Abilities"]
+layout_mode = 2
+offset_left = 257.0
+offset_right = 328.0
+offset_bottom = 31.0
+size_flags_vertical = 8
+text = "Ability 4"
