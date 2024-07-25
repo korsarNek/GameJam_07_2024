@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cg5lm5tdcbvc1"]
+[gd_scene load_steps=22 format=3 uid="uid://cg5lm5tdcbvc1"]
 
 [ext_resource type="Script" path="res://scripts/level.cs" id="1_00kbi"]
 [ext_resource type="PackedScene" uid="uid://4to83lc18kr5" path="res://components/blockade.tscn" id="2_tq6jc"]
@@ -9,7 +9,9 @@
 [ext_resource type="Script" path="res://scripts/movement_grid.cs" id="5_m3nry"]
 [ext_resource type="PackedScene" uid="uid://pxjkyrhe2bo" path="res://components/electrical_box.tscn" id="5_vglqp"]
 [ext_resource type="PackedScene" uid="uid://b6s75enqys88m" path="res://components/dumpster.tscn" id="6_j3d1p"]
+[ext_resource type="AudioStream" uid="uid://dcag46xw2k7cd" path="res://audio/music/fight/fight1.mp3" id="7_xl3g2"]
 [ext_resource type="MeshLibrary" uid="uid://b8ertjexouwxy" path="res://meshes/road/road lib.tres" id="8_iafp0"]
+[ext_resource type="AudioStream" uid="uid://caxlgx2i24a1n" path="res://audio/music/fight/fight2.mp3" id="8_wo6ou"]
 [ext_resource type="PackedScene" uid="uid://dhh6wsu5ynq3o" path="res://components/pallet.tscn" id="10_ff6f4"]
 [ext_resource type="PackedScene" uid="uid://ddbxgfny7nfn0" path="res://components/cardboard.tscn" id="11_i1m4w"]
 [ext_resource type="PackedScene" uid="uid://bsscl7t15sfj2" path="res://components/concrete_blockade.tscn" id="12_20ubm"]
@@ -112,3 +114,10 @@ transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 
 [node name="MovementGrid" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.290435, 0)
 script = ExtResource("5_m3nry")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_xl3g2")
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_wo6ou")
