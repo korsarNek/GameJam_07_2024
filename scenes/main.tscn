@@ -37,8 +37,10 @@ script = ExtResource("4_rjni1")
 [node name="Camera" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
 script = ExtResource("4_x6r5g")
-MovementSpeed = 9.425
-ZoomSpeed = 5.0
+MovementSpeed = 15.0
+ZoomSpeed = 6.0
+ZoomMinimum = 5.0
+ZoomMaximum = 15.0
 
 [node name="Camera3D" type="Camera3D" parent="Camera"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 10, 5)

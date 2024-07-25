@@ -10,13 +10,13 @@ public partial class camera : CharacterBody3D
 	public float RotationSpeed = 2;
 
 	[Export]
-	public float ZoomSpeed = 3;
+	public float ZoomSpeed = 1;
 
 	[Export]
 	public float ZoomMinimum = 1;
 
 	[Export]
-	public float ZoomMaximum = 5;
+	public float ZoomMaximum = 10;
 
 	private Camera3D? _camera;
 	private float _currentZoom;
@@ -47,7 +47,8 @@ public partial class camera : CharacterBody3D
 		Rotation += _rotationalVelocity * (float)delta;
 
 		_camera!.LookAt(Position);
-		_camera.Translate(new Vector3(0, 0, zoom * ZoomSpeed * (float)delta));
+		float zoomDistance = Mathf.Clamp(_camera!.Position.Length() + zoom * ZoomSpeed * (float)delta, ZoomMinimum, ZoomMaximum);
+		_camera!.Position = _camera.Transform.Basis * new Vector3(0, 0, zoomDistance);
 
 		base._PhysicsProcess(delta);
     }
