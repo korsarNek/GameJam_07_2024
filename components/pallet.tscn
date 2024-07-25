@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhh6wsu5ynq3o"]
+
+[ext_resource type="PackedScene" uid="uid://bf47wb512tmb6" path="res://meshes/pallets.glb" id="1_31twd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5b410"]
+size = Vector3(1.04736, 0.225342, 1.27173)
+
+[node name="Node3D" type="StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+collision_layer = 3
+
+[node name="pallets" parent="." instance=ExtResource("1_31twd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0060198, 0, 0.0018394)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00463867, 0.0899658, 0.0111084)
+shape = SubResource("BoxShape3D_5b410")

@@ -181,12 +181,13 @@ public partial class movement_grid : Node3D
 	public override void _Input(InputEvent @event)
 	{
 		// Mouse in viewport coordinates.
-		if (@event is InputEventMouseButton eventMouseButton && eventMouseButton.IsReleased())
+		if (@event is InputEventMouseButton eventMouseButton && eventMouseButton.IsActionReleased("move_to"))
 		{
 			var coordinate = MouseHoverCell();
 			if (coordinate is Vector2I target)
 			{
 				_focusedUnit!.NavigateTo(ToRealCoordinates(target));
+				//TODO: add a timeout so that the unit just gets teleported to the target if it gets stuck.
 				RemoveGrid();
 				_focusedUnit!.ReachedTarget += UnitReachedTarget;
 			}

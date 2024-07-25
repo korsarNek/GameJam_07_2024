@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddbxgfny7nfn0"]
+
+[ext_resource type="ArrayMesh" uid="uid://cmx3prgit6fbe" path="res://meshes/street assets/Sketchfab_Scene_Cardboard_Box_Cardboard_0.res" id="1_h0jxa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vvtyf"]
+size = Vector3(1.53345, 1, 1)
+
+[node name="Node3D" type="StaticBody3D"]
+collision_layer = 3
+
+[node name="SketchfabSceneCardboardBoxCardboard0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.156932, 0, -0.0482074)
+mesh = ExtResource("1_h0jxa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.156382, 0.295633, -0.0599393)
+shape = SubResource("BoxShape3D_vvtyf")

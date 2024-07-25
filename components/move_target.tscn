@@ -6,4 +6,5 @@ height = 0.1
 [node name="Node3D" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+cast_shadow = 0
 mesh = SubResource("CylinderMesh_jr2ap")

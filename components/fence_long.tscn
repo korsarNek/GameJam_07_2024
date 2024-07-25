@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://db4261so6nnfd"]
+
+[ext_resource type="ArrayMesh" uid="uid://1aywbiowjh35" path="res://meshes/street assets/Sketchfab_Scene_metal_barrier2_Metal_Barrier2_0.res" id="1_thc3o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w37pe"]
+size = Vector3(6.49615, 2.7196, 1)
+
+[node name="FenceLong" type="StaticBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+collision_layer = 3
+
+[node name="SketchfabSceneMetalBarrier2MetalBarrier20" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0486939, 0.449734, -0.00110269)
+mesh = ExtResource("1_thc3o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165924, 1.29653, 0)
+shape = SubResource("BoxShape3D_w37pe")

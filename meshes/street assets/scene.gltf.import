@@ -1,0 +1,497 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://db4f4uercfubg"
+path="res://.godot/imported/scene.gltf-9cbba656af106e2a9f6edd54cce12ba1.scn"
+
+[deps]
+
+source_file="res://meshes/street assets/scene.gltf"
+dest_files=["res://.godot/imported/scene.gltf-9cbba656af106e2a9f6edd54cce12ba1.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"meshes": {
+"Sketchfab_Scene_Barrel_Barrel_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_Barrel_Barrel_0.res"
+},
+"Sketchfab_Scene_Barrel_Barrel_Base_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_Barrel_Barrel_Base_0.res"
+},
+"Sketchfab_Scene_Bin_Bin_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_Bin_Bin_0.res"
+},
+"Sketchfab_Scene_Bin_Boards_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_Bin_Boards_0.res"
+},
+"Sketchfab_Scene_Bin_Hinge_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_Bin_Hinge_0.res"
+},
+"Sketchfab_Scene_Bin_Lid_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_Bin_Lid_0.res"
+},
+"Sketchfab_Scene_Bottle2_bottle2_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_Bottle2_bottle2_0.res"
+},
+"Sketchfab_Scene_Bottle_bottle1_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_Bottle_bottle1_0.res"
+},
+"Sketchfab_Scene_Cardboard_Box_Cardboard_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_Cardboard_Box_Cardboard_0.res"
+},
+"Sketchfab_Scene_Cone_Cone_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_Cone_Cone_0.res"
+},
+"Sketchfab_Scene_Cone_Cone_Base_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_Cone_Cone_Base_0.res"
+},
+"Sketchfab_Scene_Cube_001_Cardboard2_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_Cube_001_Cardboard2_0.res"
+},
+"Sketchfab_Scene_Hydrant_Hydrant_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_Hydrant_Hydrant_0.res"
+},
+"Sketchfab_Scene_concrete_barrier_Barrier_Metal_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_concrete_barrier_Barrier_Metal_0.res"
+},
+"Sketchfab_Scene_concrete_barrier_Concrete_Barrier_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_concrete_barrier_Concrete_Barrier_0.res"
+},
+"Sketchfab_Scene_cup1_cup1_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_cup1_cup1_0.res"
+},
+"Sketchfab_Scene_cup2_cup2_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_cup2_cup2_0.res"
+},
+"Sketchfab_Scene_give_way_Sign_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_give_way_Sign_0.res"
+},
+"Sketchfab_Scene_give_way_Sign_Pole_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_give_way_Sign_Pole_0.res"
+},
+"Sketchfab_Scene_give_way_Sign_Support_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_give_way_Sign_Support_0.res"
+},
+"Sketchfab_Scene_give_way_Support_Screws_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_give_way_Support_Screws_0.res"
+},
+"Sketchfab_Scene_metal_barrier1_Metal_Barrier1_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_metal_barrier1_Metal_Barrier1_0.res"
+},
+"Sketchfab_Scene_metal_barrier2_Metal_Barrier2_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_metal_barrier2_Metal_Barrier2_0.res"
+},
+"Sketchfab_Scene_metal_barrier_damaged1_Metal_Barrier1_Damaged_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_metal_barrier_damaged1_Metal_Barrier1_Damaged_0.res"
+},
+"Sketchfab_Scene_metal_barrier_damaged2_Metal_Barrier2_Damaged_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_metal_barrier_damaged2_Metal_Barrier2_Damaged_0.res"
+},
+"Sketchfab_Scene_no_waiting_Sign_Circle_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_no_waiting_Sign_Circle_0.res"
+},
+"Sketchfab_Scene_no_waiting_Sign_Pole4_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_no_waiting_Sign_Pole4_0.res"
+},
+"Sketchfab_Scene_no_waiting_Sign_Support4_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_no_waiting_Sign_Support4_0.res"
+},
+"Sketchfab_Scene_no_waiting_Support_Screws4_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_no_waiting_Support_Screws4_0.res"
+},
+"Sketchfab_Scene_pole_1_pole1_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_pole_1_pole1_0.res"
+},
+"Sketchfab_Scene_pole_2_pole2_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_pole_2_pole2_0.res"
+},
+"Sketchfab_Scene_red_barrier_Barrier_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_red_barrier_Barrier_0.res"
+},
+"Sketchfab_Scene_shard2_shard2_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_shard2_shard2_0.res"
+},
+"Sketchfab_Scene_shard3_shard3_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_shard3_shard3_0.res"
+},
+"Sketchfab_Scene_shard4_shard4_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_shard4_shard4_0.res"
+},
+"Sketchfab_Scene_shard_shard_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_shard_shard_0.res"
+},
+"Sketchfab_Scene_stop_Sign_Pole3_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_stop_Sign_Pole3_0.res"
+},
+"Sketchfab_Scene_stop_Sign_Support3_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_stop_Sign_Support3_0.res"
+},
+"Sketchfab_Scene_stop_Stop_Sign_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_stop_Stop_Sign_0.res"
+},
+"Sketchfab_Scene_stop_Support_Screws3_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_stop_Support_Screws3_0.res"
+},
+"Sketchfab_Scene_trashbag2_trash2_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_trashbag2_trash2_0.res"
+},
+"Sketchfab_Scene_trashbag_trash1_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_trashbag_trash1_0.res"
+},
+"Sketchfab_Scene_warning_Sign2_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_warning_Sign2_0.res"
+},
+"Sketchfab_Scene_warning_Sign_Pole2_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_warning_Sign_Pole2_0.res"
+},
+"Sketchfab_Scene_warning_Sign_Support2_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_warning_Sign_Support2_0.res"
+},
+"Sketchfab_Scene_warning_Support_Screws2_0": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://meshes/street assets/Sketchfab_Scene_warning_Support_Screws2_0.res"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://ddju35eavvewk"]
+
+[ext_resource type="ArrayMesh" uid="uid://bdeahhw2748rk" path="res://meshes/road/road parts_Object_1_014.res" id="1_1u2an"]
+[ext_resource type="ArrayMesh" uid="uid://224o5wikuak3" path="res://meshes/road/road parts_Object_2_003.res" id="2_7h3bf"]
+[ext_resource type="ArrayMesh" uid="uid://c0t0ipv0tmqyh" path="res://meshes/road/road parts_Object_2_007.res" id="3_alrcj"]
+[ext_resource type="ArrayMesh" uid="uid://cwsbx1jox2e7r" path="res://meshes/road/road parts_Object_2_041.res" id="4_himer"]
+[ext_resource type="ArrayMesh" uid="uid://cye5y24n83dho" path="res://meshes/road/road parts_Object_2_063.res" id="5_i3ctr"]
+[ext_resource type="ArrayMesh" uid="uid://cg10n7jbul4kk" path="res://meshes/road/road parts_Object_2_071.res" id="6_fo5d4"]
+[ext_resource type="ArrayMesh" uid="uid://c0fatl5ws5fa3" path="res://meshes/road/road parts_Object_2_086.res" id="7_cddts"]
+[ext_resource type="ArrayMesh" uid="uid://hpru03yvvoel" path="res://meshes/road/road parts_Object_2_095.res" id="8_jskf5"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Straight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 13.6018, 0, 76.6672)
+mesh = ExtResource("1_1u2an")
+
+[node name="Sidewalk Long" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -11.5938, 0, 17.3932)
+mesh = ExtResource("2_7h3bf")
+
+[node name="Cross" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -13.5882, 0, -21.3599)
+mesh = ExtResource("3_alrcj")
+
+[node name="Sidewalk Corner" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -11.8447, 0, -51.2075)
+mesh = ExtResource("4_himer")
+
+[node name="T" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -13.6817, -7.62939e-06, 13.7587)
+mesh = ExtResource("5_i3ctr")
+
+[node name="Sidewalk Square Small" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 13.314, 0, -18.2052)
+mesh = ExtResource("6_fo5d4")
+
+[node name="Straight with Sidewalk" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 18.4574, 0, -14.3789)
+mesh = ExtResource("7_cddts")
+
+[node name="Sidewalk Square Large" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.54821, 0, -8.41907)
+mesh = ExtResource("8_jskf5")

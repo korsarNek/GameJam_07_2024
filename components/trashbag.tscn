@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvxcq00kns06p"]
+
+[ext_resource type="ArrayMesh" uid="uid://c0laantawgw15" path="res://meshes/street assets/Sketchfab_Scene_trashbag_trash1_0.res" id="1_kih5v"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gyv1g"]
+height = 1.4389
+radius = 0.661536
+
+[node name="Trashbag" type="StaticBody3D"]
+collision_layer = 3
+
+[node name="SketchfabSceneTrashbagTrash10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0171859, 3.57628e-07, 0.117504)
+mesh = ExtResource("1_kih5v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462826, 0)
+shape = SubResource("CylinderShape3D_gyv1g")

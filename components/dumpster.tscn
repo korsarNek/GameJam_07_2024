@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6s75enqys88m"]
+
+[ext_resource type="ArrayMesh" uid="uid://1a512utwbe68" path="res://meshes/dumpster/dumpster_Base_02_Dumpster_02_0.res" id="1_b8epb"]
+[ext_resource type="ArrayMesh" uid="uid://kn244iohukap" path="res://meshes/dumpster/dumpster_Cap_03_Dumpster_02_0.res" id="2_763h5"]
+[ext_resource type="ArrayMesh" uid="uid://xv6mtqey312y" path="res://meshes/dumpster/dumpster_Wheel_05_Dumpster_02_0.res" id="3_odx2m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q0up1"]
+size = Vector3(1, 1.5, 2.5)
+
+[node name="Node3D" type="StaticBody3D"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+collision_layer = 3
+
+[node name="DumpsterBase02Dumpster020" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.615209, 0.972432, -0.880972)
+mesh = ExtResource("1_b8epb")
+
+[node name="DumpsterCap03Dumpster020" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.219e-08, 0.261532, 0.965195, 1.14319e-08, 0.965195, -0.261532, -1, -8.50931e-16, -4.37114e-08, 0.110239, 1.32457, -0.456638)
+mesh = ExtResource("2_763h5")
+
+[node name="DumpsterWheel05Dumpster020" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.669904, 0.981153, -0.798749)
+mesh = ExtResource("3_odx2m")
+
+[node name="DumpsterWheel05Dumpster021" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.0147075, 0.972167, -0.775309)
+mesh = ExtResource("3_odx2m")
+skeleton = NodePath("../DumpsterWheel05Dumpster020")
+
+[node name="DumpsterWheel05Dumpster022" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.65886, 0.980621, 0.79623)
+mesh = ExtResource("3_odx2m")
+skeleton = NodePath("../DumpsterWheel05Dumpster020")
+
+[node name="DumpsterWheel05Dumpster023" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.0257517, 0.971636, 0.81967)
+mesh = ExtResource("3_odx2m")
+skeleton = NodePath(".")
+
+[node name="DumpsterCap03Dumpster021" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.219e-08, 0.261532, 0.965195, 1.14319e-08, 0.965195, -0.261532, -1, -8.50931e-16, -4.37114e-08, 0.117065, 1.32326, 0.492168)
+mesh = ExtResource("2_763h5")
+skeleton = NodePath("../DumpsterCap03Dumpster020")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.146667, 0.746568, 0)
+shape = SubResource("BoxShape3D_q0up1")

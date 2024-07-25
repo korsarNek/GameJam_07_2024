@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://pxjkyrhe2bo"]
+
+[ext_resource type="PackedScene" uid="uid://do4xv0e2yymhf" path="res://meshes/electrical box.glb" id="1_ks831"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fjce6"]
+size = Vector3(2.08952, 1.66016, 0.614319)
+
+[node name="Node3D" type="StaticBody3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0.1135)
+collision_layer = 3
+
+[node name="electrical box" parent="." instance=ExtResource("1_ks831")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0897905, 0, 0.0950775)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0590286, 0.805928, 0.117767)
+shape = SubResource("BoxShape3D_fjce6")

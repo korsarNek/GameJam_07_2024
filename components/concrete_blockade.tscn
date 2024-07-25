@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsscl7t15sfj2"]
+
+[ext_resource type="ArrayMesh" uid="uid://crjy0fbw0xtxn" path="res://meshes/street assets/Sketchfab_Scene_concrete_barrier_Barrier_Metal_0.res" id="1_7dmca"]
+[ext_resource type="ArrayMesh" uid="uid://cdd80j0skdc47" path="res://meshes/street assets/Sketchfab_Scene_concrete_barrier_Concrete_Barrier_0.res" id="2_ndbxl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0002c"]
+size = Vector3(3.66632, 2.03174, 1.18506)
+
+[node name="Node3D" type="StaticBody3D"]
+collision_layer = 3
+
+[node name="SketchfabSceneConcreteBarrierBarrierMetal0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0264109, 0, 0.0198464)
+mesh = ExtResource("1_7dmca")
+
+[node name="SketchfabSceneConcreteBarrierConcreteBarrier0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0422735, -3.57628e-07, 0.0287461)
+mesh = ExtResource("2_ndbxl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0386047, 0.720482, -0.00952148)
+shape = SubResource("BoxShape3D_0002c")

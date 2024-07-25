@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://df6jsky76jdrc"]
+
+[ext_resource type="ArrayMesh" uid="uid://c5crshororpnp" path="res://meshes/street assets/Sketchfab_Scene_stop_Stop_Sign_0.res" id="1_es5mg"]
+[ext_resource type="ArrayMesh" uid="uid://divm827h07m22" path="res://meshes/street assets/Sketchfab_Scene_stop_Sign_Pole3_0.res" id="2_q3db0"]
+[ext_resource type="ArrayMesh" uid="uid://bu8t3gxy6tbjk" path="res://meshes/street assets/Sketchfab_Scene_stop_Sign_Support3_0.res" id="3_3nyr7"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_o110q"]
+height = 5.9909
+radius = 0.441114
+
+[node name="StopSign" type="StaticBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+collision_layer = 3
+
+[node name="SketchfabSceneStopStopSign0" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0.0674174, 0, 0.0210646)
+mesh = ExtResource("1_es5mg")
+
+[node name="SketchfabSceneStopSignPole30" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0.0209795, 0.132062, 0.0133566)
+mesh = ExtResource("2_q3db0")
+
+[node name="SketchfabSceneStopSignSupport30" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0.0209795, -0.132062, 0.0151834)
+mesh = ExtResource("3_3nyr7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.76571, 0)
+shape = SubResource("CylinderShape3D_o110q")

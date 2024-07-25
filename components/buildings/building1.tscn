@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bhffdliqc8cxp" path="res://meshes/building1.glb" id="1_klxsp"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9194, 0, 21.7843)
