@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddju35eavvewk"]
+[gd_scene load_steps=15 format=3 uid="uid://ddju35eavvewk"]
 
 [ext_resource type="ArrayMesh" uid="uid://bdeahhw2748rk" path="res://meshes/road/road parts_Object_1_014.res" id="1_1u2an"]
 [ext_resource type="ArrayMesh" uid="uid://224o5wikuak3" path="res://meshes/road/road parts_Object_2_003.res" id="2_7h3bf"]
@@ -9,36 +9,117 @@
 [ext_resource type="ArrayMesh" uid="uid://c0fatl5ws5fa3" path="res://meshes/road/road parts_Object_2_086.res" id="7_cddts"]
 [ext_resource type="ArrayMesh" uid="uid://hpru03yvvoel" path="res://meshes/road/road parts_Object_2_095.res" id="8_jskf5"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ex30x"]
+size = Vector3(11.0878, 21.3497, 0.540527)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ltx2i"]
+size = Vector3(10.7659, 32.3137, 0.518555)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jwcrg"]
+size = Vector3(32.0821, 13.4117, 0.508667)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dag0t"]
+size = Vector3(18.0249, 21.4058, 0.53418)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wspbf"]
+size = Vector3(3.42407, 21.3817, 0.675293)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1xjia"]
+size = Vector3(7.13403, 7.12524, 0.683716)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Straight" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 13.6018, 0, 76.6672)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+visible = false
 mesh = ExtResource("1_1u2an")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Straight"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Straight/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.23)
+shape = SubResource("BoxShape3D_ex30x")
 
 [node name="Sidewalk Long" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -11.5938, 0, 17.3932)
+visible = false
 mesh = ExtResource("2_7h3bf")
 
 [node name="Cross" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -13.5882, 0, -21.3599)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.0818719, 0)
 mesh = ExtResource("3_alrcj")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Cross"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cross/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0570068, 0.0806351, -0.240723)
+shape = SubResource("BoxShape3D_ltx2i")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cross/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0419006, 0.106781, -0.245667)
+shape = SubResource("BoxShape3D_jwcrg")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Cross/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.262639, 0.168555, -0.0108051)
+depth = 0.4
+polygon = PackedVector2Array(-16.3471, -5.62946, -7.05093, -5.66217, -5.75853, -6.73626, -5.68971, -16.2208, -9.31609, -16.2281, -9.28309, -9.28088, -16.3641, -9.23433)
+
+[node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="Cross/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 0.262639, -0.323033, -0.0167744)
+depth = 0.4
+polygon = PackedVector2Array(-16.3471, -5.62946, -7.05093, -5.66217, -5.75853, -6.73626, -5.68971, -16.2208, -9.31609, -16.2281, -9.28309, -9.28088, -16.3641, -9.23433)
+
+[node name="CollisionPolygon3D3" type="CollisionPolygon3D" parent="Cross/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -0.221066, 0.168555, -0.0440755)
+depth = 0.4
+polygon = PackedVector2Array(-16.3471, -5.62946, -7.05093, -5.66217, -5.75853, -6.73626, -5.68971, -16.2208, -9.31609, -16.2281, -9.28309, -9.28088, -16.3641, -9.23433)
+
+[node name="CollisionPolygon3D4" type="CollisionPolygon3D" parent="Cross/StaticBody3D"]
+transform = Transform3D(-1, 8.74228e-08, 3.55271e-15, -8.74228e-08, -1, -8.74228e-08, -2.68658e-16, -8.74228e-08, 1, -0.221066, -0.201846, -0.0323217)
+depth = 0.4
+polygon = PackedVector2Array(-16.3471, -5.62946, -7.05093, -5.66217, -5.75853, -6.73626, -5.68971, -16.2208, -9.31609, -16.2281, -9.28309, -9.28088, -16.3641, -9.23433)
+
 [node name="Sidewalk Corner" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -11.8447, 0, -51.2075)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+visible = false
 mesh = ExtResource("4_himer")
 
 [node name="T" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -13.6817, -7.62939e-06, 13.7587)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+visible = false
 mesh = ExtResource("5_i3ctr")
 
 [node name="Sidewalk Square Small" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 13.314, 0, -18.2052)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+visible = false
 mesh = ExtResource("6_fo5d4")
 
 [node name="Straight with Sidewalk" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 18.4574, 0, -14.3789)
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 0, 0)
+visible = false
 mesh = ExtResource("7_cddts")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Straight with Sidewalk"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Straight with Sidewalk/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 8.35189e-23, 0, 8.35188e-23, 1, -5.29396e-22, 5.97665e-09, -0.36973)
+shape = SubResource("BoxShape3D_dag0t")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Straight with Sidewalk/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 8.35189e-23, 0, 8.35188e-23, 1, -7.24414, 0.00764498, -0.255923)
+shape = SubResource("BoxShape3D_wspbf")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Straight with Sidewalk/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 8.35189e-23, 0, 8.35188e-23, 1, 7.25071, 0.0550095, -0.257652)
+shape = SubResource("BoxShape3D_wspbf")
+
 [node name="Sidewalk Square Large" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.54821, 0, -8.41907)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.16557, -0.106386, -1.25736)
+visible = false
 mesh = ExtResource("8_jskf5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sidewalk Square Large"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sidewalk Square Large/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.244019, 0.251587, -0.158142)
+shape = SubResource("BoxShape3D_1xjia")

@@ -2,15 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://bdwoxm81wwwus" path="res://meshes/vampire.glb" id="1_tjv5d"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vfwd6"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_y7er4"]
+height = 1.8
 radius = 0.4
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.246491, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.553608, 0)
-shape = SubResource("CapsuleShape3D_vfwd6")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66494, 0)
+shape = SubResource("CylinderShape3D_y7er4")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 0.2
