@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://hdrsqvei577v"]
+
+[ext_resource type="Script" path="res://equipment/sword.cs" id="1_lrgbq"]
+[ext_resource type="PackedScene" uid="uid://dl4bmi53k7s4y" path="res://meshes/blade/scene.gltf" id="2_18m0t"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jcet5"]
+size = Vector2(100, 100)
+
+[node name="Sword" type="Node3D"]
+script = ExtResource("1_lrgbq")
+
+[node name="Model" parent="." instance=ExtResource("2_18m0t")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.366085, 0, -0.311746)
+
+[node name="Icon" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("PlaceholderTexture2D_jcet5")
+
+[connection signal="gui_input" from="Icon" to="." method="OnIconPressed"]

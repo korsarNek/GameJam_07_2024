@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs2l50hikx66c"]
+
+[ext_resource type="Script" path="res://abilities/shadowform.cs" id="1_wofwm"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_40xl1"]
+size = Vector2(100, 100)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t201p"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, 1, 0)
+linear_accel_max = 0.75
+
+[sub_resource type="BoxMesh" id="BoxMesh_p154r"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="Shadowform" type="Node3D"]
+script = ExtResource("1_wofwm")
+
+[node name="Icon" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("PlaceholderTexture2D_40xl1")
+
+[node name="Effect" type="GPUParticles3D" parent="."]
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_t201p")
+draw_pass_1 = SubResource("BoxMesh_p154r")
+
+[connection signal="gui_input" from="Icon" to="." method="OnIconPressed"]

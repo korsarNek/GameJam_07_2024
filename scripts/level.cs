@@ -7,7 +7,7 @@ public partial class level : Node3D
 {
 	private int _activeUnitIndex = 0;
 	private List<unit> _units = new();
-	private movement_grid? _movement_grid;
+	private battle_ui? _battleUi;
 
 	public unit ActiveUnit => _units[_activeUnitIndex];
 
@@ -15,19 +15,33 @@ public partial class level : Node3D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		_battleUi = GetNode<battle_ui>("BattleUI");
+
 		foreach (Node n in GetTree().GetNodesInGroup("units"))
 		{
 			if (n is unit)
 				_units.Add(GetNode<unit>(n.GetPath())); 
 		}
-
-		_movement_grid = GetNode<movement_grid>("MovementGrid");
-		_movement_grid.ReachedTarget += () =>
+		_units.Sort((a, b) => b.Initiative.CompareTo(a.Initiative));
+		
+		foreach (var unit in _units)
 		{
-			_movement_grid.ShowMovementGrid(ActiveUnit);
-		};
+			unit.TurnEnded += _TurnEnded;
+		}
 
-		_movement_grid.ShowMovementGrid(ActiveUnit);
+		_StartTurn();
+	}
+
+	private void _StartTurn()
+	{
+		ActiveUnit.StartTurn();
+		_battleUi!.Unit = ActiveUnit;
+	}
+
+	private void _TurnEnded()
+	{
+		_activeUnitIndex = (_activeUnitIndex + 1) % _units.Count;
+		_StartTurn();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

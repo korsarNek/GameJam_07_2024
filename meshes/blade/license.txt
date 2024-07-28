@@ -1,0 +1,11 @@
+Model Information:
+* title:	Speed Ultra - Blade
+* source:	https://sketchfab.com/3d-models/speed-ultra-blade-993cb4b10f9944a6925002d3a40bca69
+* author:	T-Art (https://sketchfab.com/person-x)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Speed Ultra - Blade" (https://sketchfab.com/3d-models/speed-ultra-blade-993cb4b10f9944a6925002d3a40bca69) by T-Art (https://sketchfab.com/person-x) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
