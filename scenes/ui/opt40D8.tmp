@@ -65,10 +65,10 @@ text = "Back"
 [node name="Master" type="AudioStreamPlayer" parent="."]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+bus = &"music"
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = &"sfx"
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/Master_volume" to="." method="_on_master_volume_value_changed"]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/Music_volume" to="." method="_on_music_volume_value_changed"]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/SFX_volume" to="." method="_on_sfx_volume_value_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

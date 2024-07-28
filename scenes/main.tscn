@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cg5lm5tdcbvc1"]
+[gd_scene load_steps=26 format=3 uid="uid://cg5lm5tdcbvc1"]
 
 [ext_resource type="Script" path="res://scripts/level.cs" id="1_00kbi"]
 [ext_resource type="PackedScene" uid="uid://4to83lc18kr5" path="res://components/blockade.tscn" id="2_tq6jc"]
@@ -20,7 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://df6jsky76jdrc" path="res://components/stop_sign.tscn" id="15_vnr7n"]
 [ext_resource type="PackedScene" uid="uid://db4261so6nnfd" path="res://components/fence_long.tscn" id="16_a6a78"]
 [ext_resource type="AudioStream" uid="uid://dssqf00yc8voi" path="res://audio/music/fight/fight3.mp3" id="20_nxg78"]
-[ext_resource type="PackedScene" uid="uid://bsk0lgrlj23f7" path="res://scenes/ui/battle_ui.tscn" id="21_xk3nk"]
+[ext_resource type="PackedScene" path="res://scenes/ui/battle_ui.tscn" id="21_xk3nk"]
+[ext_resource type="PackedScene" uid="uid://dgxd7yq56rjwy" path="res://scenes/ui/main_menu.tscn" id="22_raitm"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5pj3x"]
 
@@ -152,6 +153,9 @@ collision_layer = 2
 [node name="FenceLong" parent="NavigationRegion3D" instance=ExtResource("16_a6a78")]
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -11.8828, 0.0214547, -0.302626)
 collision_layer = 2
+
+[node name="main_menu" parent="." instance=ExtResource("22_raitm")]
+visible = false
 
 [editable path="Player"]
 [editable path="Player/vampire"]

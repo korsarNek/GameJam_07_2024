@@ -8,6 +8,7 @@ public partial class level : Node3D
 	private int _activeUnitIndex = 0;
 	private List<unit> _units = new();
 	private battle_ui? _battleUi;
+	private Control? _mainMenu;
 
 	public unit ActiveUnit => _units[_activeUnitIndex];
 
@@ -16,6 +17,7 @@ public partial class level : Node3D
 	public override void _Ready()
 	{
 		_battleUi = GetNode<battle_ui>("BattleUI");
+		_mainMenu = GetNode<Control>("main_menu");
 
 		foreach (Node n in GetTree().GetNodesInGroup("units"))
 		{
@@ -49,4 +51,12 @@ public partial class level : Node3D
 	{
 		
 	}
+
+    public override void _Input(InputEvent @event)
+    {
+        if (@event.IsActionPressed("Escape"))
+		{
+			_mainMenu!.Visible = true;
+		}
+    }
 }
