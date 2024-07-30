@@ -10,7 +10,7 @@ size = Vector2(100, 100)
 script = ExtResource("1_lrgbq")
 
 [node name="Model" parent="." instance=ExtResource("2_18m0t")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.366085, 0, -0.311746)
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, -0.366085, 0, -0.311746)
 
 [node name="Icon" type="TextureRect" parent="."]
 offset_right = 40.0

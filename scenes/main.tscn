@@ -1,10 +1,12 @@
-[gd_scene load_steps=25 format=3 uid="uid://cg5lm5tdcbvc1"]
+[gd_scene load_steps=29 format=3 uid="uid://cg5lm5tdcbvc1"]
 
 [ext_resource type="Script" path="res://scripts/level.cs" id="1_00kbi"]
 [ext_resource type="PackedScene" uid="uid://4to83lc18kr5" path="res://components/blockade.tscn" id="2_tq6jc"]
 [ext_resource type="PackedScene" uid="uid://b6sgipwir8lyy" path="res://components/player.tscn" id="3_28ojr"]
+[ext_resource type="PackedScene" uid="uid://42nh5teafiyo" path="res://equipment/colt.tscn" id="4_n744w"]
 [ext_resource type="Script" path="res://scripts/unit.cs" id="4_rjni1"]
 [ext_resource type="Script" path="res://scripts/camera.cs" id="4_x6r5g"]
+[ext_resource type="PackedScene" uid="uid://hdrsqvei577v" path="res://equipment/sword.tscn" id="5_i3iax"]
 [ext_resource type="PackedScene" uid="uid://byg1hvmspp08g" path="res://components/buildings/building1.tscn" id="5_l88om"]
 [ext_resource type="Script" path="res://scripts/movement_grid.cs" id="5_m3nry"]
 [ext_resource type="PackedScene" uid="uid://pxjkyrhe2bo" path="res://components/electrical_box.tscn" id="5_vglqp"]
@@ -15,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://dhh6wsu5ynq3o" path="res://components/pallet.tscn" id="10_ff6f4"]
 [ext_resource type="PackedScene" uid="uid://ddbxgfny7nfn0" path="res://components/cardboard.tscn" id="11_i1m4w"]
 [ext_resource type="PackedScene" uid="uid://bsscl7t15sfj2" path="res://components/concrete_blockade.tscn" id="12_20ubm"]
+[ext_resource type="Script" path="res://scripts/ranged_attack_selection.cs" id="12_d5t8w"]
+[ext_resource type="Script" path="res://scripts/melee_attack_selection.cs" id="13_gq8px"]
 [ext_resource type="PackedScene" uid="uid://bpsatlqqfbmyp" path="res://components/bin.tscn" id="13_ostgc"]
 [ext_resource type="PackedScene" uid="uid://cvxcq00kns06p" path="res://components/trashbag.tscn" id="14_cdc6p"]
 [ext_resource type="PackedScene" uid="uid://df6jsky76jdrc" path="res://components/stop_sign.tscn" id="15_vnr7n"]
@@ -41,21 +45,23 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 script = ExtResource("1_00kbi")
 
 [node name="Player2" parent="." groups=["units"] instance=ExtResource("3_28ojr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65201, 0.190433, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65201, 0.200818, 0)
 collision_layer = 2
 script = ExtResource("4_rjni1")
 Initiative = 7
+Owner = 1
+
+[node name="Colt" parent="Player2" instance=ExtResource("4_n744w")]
+transform = Transform3D(0.258819, 2.98023e-08, 0.965926, 0.933013, 0.258819, -0.25, -0.25, 0.965926, 0.0669873, -0.236851, 0.429912, -0.0745736)
 
 [node name="Player" parent="." groups=["units"] instance=ExtResource("3_28ojr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4779, 0.0811924, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4779, 0.282847, 0)
 collision_layer = 2
 script = ExtResource("4_rjni1")
+Owner = 1
 
-[node name="RightHand" parent="Player" index="6"]
-transform = Transform3D(0.00116153, -0.00400643, 0.00908841, 0.00333259, -0.00846269, -0.00415652, 0.00935653, 0.00351159, 0.000352213, -0.355602, 0.646311, 0.0597682)
-
-[node name="LeftHand" parent="Player" index="7"]
-transform = Transform3D(0.00120551, 0.00401929, -0.009077, -0.00339543, -0.00842524, -0.00418165, -0.00932832, 0.00358614, 0.00034905, 0.390408, 0.646311, 0.0594438)
+[node name="Sword2" parent="Player" instance=ExtResource("5_i3iax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.284683, 0.515863, 0.0646327)
 
 [node name="Camera" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
@@ -92,6 +98,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.62287, 0.266447, -1.03334)
 [node name="MovementGrid" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.290435, 0)
 script = ExtResource("5_m3nry")
+
+[node name="RangedAttackSystem" type="Node3D" parent="."]
+script = ExtResource("12_d5t8w")
+
+[node name="MeleeAttackSystem" type="Node3D" parent="."]
+script = ExtResource("13_gq8px")
 
 [node name="BattleUI" parent="." instance=ExtResource("21_xk3nk")]
 
@@ -153,5 +165,7 @@ collision_layer = 2
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -11.8828, 0.0214547, -0.302626)
 collision_layer = 2
 
-[editable path="Player"]
-[editable path="Player/vampire"]
+[node name="Enemy" parent="." groups=["units"] instance=ExtResource("3_28ojr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.82759, 0.565694, 4.82278)
+collision_layer = 2
+script = ExtResource("4_rjni1")

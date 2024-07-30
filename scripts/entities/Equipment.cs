@@ -7,34 +7,14 @@ public interface IEquipment
     void Unequipped(unit unit);
 }
 
-public class RangedWeapon : IEquipment
+public interface IRangedWeapon : IEquipment
 {
-    public int MaximumAmmunition => 12;
-    public int Ammunition { get; set; }
-
-    public float Range => 8;
-    public float Damage => 10;
-
-    public RangedWeapon()
-    {
-        Ammunition = MaximumAmmunition;
-    }
-
-    public void Equipped(unit unit)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void Unequipped(unit unit)
-    {
-        throw new NotImplementedException();
-    }
+    float Range { get; }
 }
 
 public interface IMeleeWeapon : IEquipment
 {
     int Range { get; }
-    float Damage { get; }
 }
 
 public class Armor : IEquipment
@@ -44,12 +24,12 @@ public class Armor : IEquipment
 
     public void Equipped(unit unit)
     {
-        unit.ReceiveDamage += CalculateDamage;
+        unit.ReceivedDamage += CalculateDamage;
     }
 
     public void Unequipped(unit unit)
     {
-        unit.ReceiveDamage -= CalculateDamage;
+        unit.ReceivedDamage -= CalculateDamage;
     }
 
     private Damage CalculateDamage(Damage damage)

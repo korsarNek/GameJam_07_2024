@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsk0lgrlj23f7"]
+[gd_scene load_steps=3 format=3 uid="uid://bsk0lgrlj23f7"]
 
 [ext_resource type="Script" path="res://scenes/ui/battle_ui.cs" id="1_5b2pq"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dubwo"]
+size = Vector2(100, 100)
 
 [node name="BattleUI" type="MarginContainer"]
 anchors_preset = 15
@@ -11,13 +14,34 @@ grow_vertical = 2
 script = ExtResource("1_5b2pq")
 metadata/_edit_use_anchors_ = true
 
-[node name="AbilityPanel" type="PanelContainer" parent="."]
+[node name="ActionContainer" type="BoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+vertical = true
+
+[node name="ActionPoints" type="Label" parent="ActionContainer"]
+layout_mode = 2
+text = "ActionPoints"
+
+[node name="AbilityPanel" type="PanelContainer" parent="ActionContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 8
 
-[node name="AbilityContainer" type="BoxContainer" parent="AbilityPanel"]
+[node name="AbilityContainer" type="BoxContainer" parent="ActionContainer/AbilityPanel"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
+
+[node name="AbortActionContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="AbortAction" type="TextureButton" parent="AbortActionContainer"]
+layout_mode = 2
+texture_normal = SubResource("PlaceholderTexture2D_dubwo")
+
+[connection signal="pressed" from="AbortActionContainer/AbortAction" to="." method="CancelPressed"]

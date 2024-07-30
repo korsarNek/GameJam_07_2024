@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Threading.Tasks;
 
 public partial class unit : CharacterBody3D
 {
@@ -21,20 +22,26 @@ public partial class unit : CharacterBody3D
 	[Export]
 	public float Weight = 80;
 
+	[Export]
+	public new Owner Owner = Owner.AI;
+
 	public int ActionPoints { get; set; }
 	public float Health;
 
-	private IAction? _selectedAction;
+	private IActionable? _selectedAction;
 	private NavigationAgent3D? _navigationAgent;
-	private AnimationPlayer? _animationPlayer;
+	private AnimationTree? _animationTree;
 	private Timer? _timer;
 	private bool _timerStarted = false;
 	private NavigationMode _navigationMode = NavigationMode.Idle;
 	private List<DamageCalculationHandler> _damageReceivedHandlers = new();
+	private PackedScene? _damageNumbers;
+	private Dictionary<string, List<TaskCompletionSource>> _animationRequests = new();
 
-	public List<IAction> Actions = new();
+	public List<ISelectable> Actions = new();
 	public List<IEquipment> Equipped = new();
 	public List<IAbility> Abilities = new();
+	public bool IsDead => Health <= 0;
 
 	[Signal]
 	public delegate void ReachedTargetEventHandler();
@@ -45,17 +52,18 @@ public partial class unit : CharacterBody3D
 	[Signal]
 	public delegate void ActionAvailableEventHandler();
 
-	public event Action<IAction>? ActionSelected;
+	public event Action<IActionable>? ActionSelected;
+	public event Action<IActionable>? ActionFinished;
 
-	public event Action? Died;
+	public event Action<unit>? Died;
 
 	public event Action<unit, Damage>? Kills;
 
 	public delegate Damage DamageCalculationHandler(Damage damage);
 
-	public IAction? SelectedAction => _selectedAction;
+	public IActionable? SelectedAction => _selectedAction;
 
-	public event DamageCalculationHandler ReceiveDamage
+	public event DamageCalculationHandler ReceivedDamage
 	{
 		add => _damageReceivedHandlers.Add(value);
 		remove => _damageReceivedHandlers.Remove(value);
@@ -72,14 +80,37 @@ public partial class unit : CharacterBody3D
 		EmitSignal(SignalName.ActionAvailable);
 	}
 
-	public void SelectAction(IAction action)
+	public void SelectAction(IActionable action)
 	{
 		_selectedAction = action;
 		ActionSelected?.Invoke(action);
 	}
 
+	public Task PlayAnimation(string animationName)
+	{
+		_animationTree!.Set($"parameters/{animationName}/request", (int)AnimationNodeOneShot.OneShotRequest.Fire);
+		if (!_animationRequests.TryGetValue(animationName, out var list))
+		{
+			list = new List<TaskCompletionSource>();
+			_animationRequests[animationName] = list;
+		}
+
+		var task = new TaskCompletionSource();
+		list.Add(task);
+
+		return task.Task;
+	}
+
+	public void ChangeAnimationState(string animationName)
+	{
+		_animationTree!.Set("parameters/Transition/transition_request", animationName);
+	}
+
 	public void FinishAction()
 	{
+		if (_selectedAction is not null)
+			ActionFinished?.Invoke(_selectedAction);
+		
 		_selectedAction = null;
 		if (ActionPoints <= 0)
 			EmitSignal(SignalName.TurnEnded);
@@ -87,36 +118,55 @@ public partial class unit : CharacterBody3D
 			EmitSignal(SignalName.ActionAvailable);
 	}
 
-	public void ProcessDamage(Damage damage)
+	public void ReceiveDamage(Damage damage)
 	{
 		foreach (var handler in _damageReceivedHandlers)
 			damage = handler(damage);
+
+		var display = (damage_number)_damageNumbers!.Instantiate();
+		display.setText($"-{damage.Amount}");
+		display.AnimationFinished += _DamageAnimationFinished;
+		AddChild(display);
 
 		Health -= damage.Amount;
 		if (Health <= 0)
 		{
 			Health = 0;
-			Died?.Invoke();
+			Died?.Invoke(this);
+			// Remove collision, so units can stand on top.
+			SetCollisionLayerValue(Constants.ObstaclesLayer, false);
 			damage.Source.Kills?.Invoke(this, damage);
+			ChangeAnimationState(Animation.Dying);
 		}
+		else if (damage.Amount > 20)
+			PlayAnimation(Animation.BigHit);
+		else
+			PlayAnimation(Animation.Hit);
+	}
+
+	private void _DamageAnimationFinished(damage_number damage)
+	{
+		damage.AnimationFinished -= _DamageAnimationFinished;
+		RemoveChild(damage);
 	}
 
 	public void NavigateTo(Vector3 position)
 	{
 		_navigationAgent!.TargetPosition = position;
-		_animationPlayer!.Play("running");
+		ChangeAnimationState(Animation.Running);
 		_navigationMode = NavigationMode.Agent;
 	}
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		_damageNumbers = GD.Load<PackedScene>("res://components/damage_number.tscn");
+
 		_navigationAgent = GetNode<NavigationAgent3D>("NavigationAgent3D");
-		ActionPoints = MaximumActionPoints;
-		_animationPlayer = (AnimationPlayer)FindChild("AnimationPlayer");
-		var animation = _animationPlayer.GetAnimation("running");
-		animation.LoopMode = Animation.LoopModeEnum.Linear;
 		_navigationAgent.NavigationFinished += _TargetReached;
+
+		_animationTree = (AnimationTree)FindChild("AnimationTree");
+		_animationTree.AnimationFinished += _AnimationFinished;
 
 		foreach (var node in GetChildren())
 		{
@@ -133,6 +183,17 @@ public partial class unit : CharacterBody3D
 		}
 	}
 
+	private void _AnimationFinished(StringName name)
+	{
+		if (!_animationRequests.TryGetValue(name.ToString(), out var list))
+			return;
+
+		foreach (var task in list)
+			task.SetResult();
+
+		list.Clear();
+	}
+
 	public void Attach(string boneName, Node3D node)
 	{
 		var attachment = GetNode<BoneAttachment3D>(boneName);
@@ -147,7 +208,7 @@ public partial class unit : CharacterBody3D
 
 	private void _TargetReached()
 	{
-		_animationPlayer!.Stop();
+		ChangeAnimationState(Animation.Idle);
 		// When it reached the target according to the navigationAgent, we might still be a bit off. So we switch mode to manually move there.
 		_navigationMode = NavigationMode.Manual;
 	}
@@ -206,6 +267,11 @@ public partial class unit : CharacterBody3D
 		}
     }
 
+	public void LookAt(unit unit)
+	{
+		LookAt(unit.GlobalPosition, UpDirection, true);
+	}
+
 	private void _Move(Vector3 next, float speed, float delta)
 	{
 		var direction = GlobalPosition.DirectionTo(next);
@@ -225,6 +291,17 @@ public partial class unit : CharacterBody3D
 	{
 		
 	}
+
+	public static class Animation
+	{
+		public static string Idle => "idle";
+		public static string Running => "running";
+		public static string Hit => "hit";
+		public static string BigHit => "big hit";
+		public static string Dying => "dying";
+		public static string Shooting => "shooting";
+		public static string Aiming => "aiming";
+	}
 }
 
 public enum NavigationMode
@@ -232,4 +309,10 @@ public enum NavigationMode
 	Idle,
 	Agent,
 	Manual,
+}
+
+public enum Owner
+{
+	Player = 0b1,
+	AI = 0b10,
 }

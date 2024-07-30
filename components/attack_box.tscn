@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c14yfxuj3woqk"]
+
+[ext_resource type="Texture2D" uid="uid://cb3p3u3qvihyo" path="res://images/select.png" id="1_hx50w"]
+[ext_resource type="Script" path="res://components/attack_box.cs" id="1_xahap"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_je7tc"]
+
+[node name="AttackBox" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_je7tc")
+script = ExtResource("1_xahap")
+MinimumSize = Vector2(20, 20)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_hx50w")
+draw_center = false
+region_rect = Rect2(-3, 0.5, 392, 375.25)
+patch_margin_left = 201
+patch_margin_top = 180
+patch_margin_right = 196
+patch_margin_bottom = 197
+
+[connection signal="mouse_entered" from="." to="." method="_MouseEntered"]

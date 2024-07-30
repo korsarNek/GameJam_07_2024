@@ -2,10 +2,12 @@ using System;
 using System.Linq;
 using Godot;
 
-public partial class shadowform : Node3D, IAbility, IAction
+public partial class shadowform : Node3D, IAbility, ISelectable
 {
     [Export]
     public int ActionPointCost;
+
+    public bool CanBeCanceled => false;
 
     private Control? _icon;
     private unit? _unit;
@@ -23,8 +25,10 @@ public partial class shadowform : Node3D, IAbility, IAction
         _icon = GetNode<Control>("Icon");
         RemoveChild(_icon);
 
-        _movement_grid = GetTree().CurrentScene.GetNode<movement_grid>("MovementGrid");
-        _movement_grid.ReachedTarget += _ReachedTarget;
+        GetTree().CurrentScene.Ready += () => {
+            _movement_grid = ((level)GetTree().CurrentScene).MovementGrid;
+            _movement_grid.ReachedTarget += _ReachedTarget;
+        };
     }
 
     private void _ReachedTarget(unit unit)

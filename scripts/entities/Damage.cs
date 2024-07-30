@@ -1,1 +1,1 @@
-public readonly record struct Damage(float Amount, unit Source, IAction Action);
+public readonly record struct Damage(float Amount, unit Source, IActionable Action);

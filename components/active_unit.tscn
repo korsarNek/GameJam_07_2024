@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1v758o4vwh7e"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_gxif4"]
+outer_radius = 0.687
+rings = 16
+ring_segments = 8
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("TorusMesh_gxif4")

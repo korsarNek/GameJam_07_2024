@@ -1,13 +1,15 @@
 using System;
 using Godot;
 
-public partial class move : Node3D, IAbility
+public partial class move : Node3D, IAbility, IActionable
 {
     [Export]
     public int ActionPointCost { get; set; } = 1;
 
     [Export]
     public int Range { get; set; } = 5;
+
+    public bool CanBeCanceled => false;
 
     private movement_grid? _movement_grid;
     private unit? _unit;
@@ -16,16 +18,24 @@ public partial class move : Node3D, IAbility
     {
         base._Ready();
 
-        _movement_grid = GetTree().CurrentScene.GetNode<movement_grid>("MovementGrid");
-        _movement_grid.ReachedTarget += _ReachedTarget;
+        GetTree().CurrentScene.Ready += () => {
+            _movement_grid = ((level)GetTree().CurrentScene).MovementGrid;
+            _movement_grid.MoveInitiated += _MoveInitiated;
+            _movement_grid.ReachedTarget += _ReachedTarget;
+        };
+    }
+
+    private void _MoveInitiated()
+    {
+        _unit!.SelectAction(this);
+        _unit.ActionPoints--;
     }
 
     private void _ReachedTarget(unit unit)
 	{
-        if (unit != _unit || unit.SelectedAction != null)
+        if (unit != _unit || unit.SelectedAction != this)
             return;
 
-        _unit!.ActionPoints--;
         _unit.FinishAction();
 	}
 
@@ -44,7 +54,7 @@ public partial class move : Node3D, IAbility
         _movement_grid!.ShowMovementGrid(_unit!, Range);
     }
 
-    private void _ActionSelected(IAction action)
+    private void _ActionSelected(IActionable action)
     {
         //If an explicit action has been selected, hide the default movement grid.
         _movement_grid!.RemoveGrid();

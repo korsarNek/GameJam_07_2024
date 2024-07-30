@@ -9,13 +9,15 @@ public partial class sword : Node3D, IMeleeWeapon, IMeleeAttack
 
 	[Export]
 	public float Damage { get; set; } = 20f;
+	
+	public bool CanBeCanceled => true;
 
     public Control Icon => _icon ?? throw new ObjectNotInitializedException();
 
 	private unit? _unit;
     private Node3D? _model;
 	private Control? _icon;
-	private movement_grid? _movement_grid;
+	//private movement_grid? _movement_grid;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -26,7 +28,7 @@ public partial class sword : Node3D, IMeleeWeapon, IMeleeAttack
 		_icon = GetNode<Control>("Icon");
 		RemoveChild(_icon);
 
-		_movement_grid = GetTree().CurrentScene.GetNode<movement_grid>("MovementGrid");
+		//_movement_grid = ((level)GetTree().CurrentScene).MovementGrid;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -58,7 +60,7 @@ public partial class sword : Node3D, IMeleeWeapon, IMeleeAttack
         if (input.IsActionReleased("ui_use_ability"))
         {
 			var move = (move)_unit!.Abilities.First(a => a is move);
-			_movement_grid!.ShowMovementGrid(_unit!, move.Range);
+			//_movement_grid!.ShowMovementGrid(_unit!, move.Range);
 			// Show movement grid, but enemy units are the only valid target.
 			GD.Print("Use weapon");
         }
